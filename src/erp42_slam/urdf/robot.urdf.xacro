@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot name="erp42">
+
+  <link name="base_link"/>
+
+  <!-- LiDAR Link -->
+  <link name="lidar_link"/>
+  <joint name="base_link_to_lidar_link" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.6 0.0 0.8" rpy="0.0 0.0 -1.5708"/>
+  </joint>
+
+  <!-- Left Camera Link -->
+  <link name="left_camera_link"/>
+  <joint name="base_link_to_left_camera_link" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_camera_link"/>
+    <origin xyz="0.6 0.2 1.1" rpy="1.570796 0.0 -1.570796"/>
+  </joint>
+
+  <!-- Right Camera Link -->
+  <link name="right_camera_link"/>
+  <joint name="base_link_to_right_camera_link" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_camera_link"/>
+    <origin xyz="0.6 -0.2 1.1" rpy="-1.570796 0.0 -1.570796"/>
+  </joint>
+
+  <!-- IMU Link -->
+  <link name="imu_link"/>
+  <joint name="base_link_to_imu_link" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.0 0.0 0.7" rpy="-1.570796 0.0 0.0"/>
+  </joint>
+
+</robot>
